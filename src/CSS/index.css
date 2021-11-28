@@ -1,0 +1,366 @@
+html, body{
+    height:100%;
+    margin:0;
+    background-color: #f5f5f5;
+    font-family: 'Rubik', sans-serif;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    z-index:98;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #7a7a7a;
+    opacity:0.5;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom, rgba(81, 18, 129,1), rgba(121, 82, 179, 1));
+}
+#header{
+    width:100%;
+    position:fixed;
+    background-image: linear-gradient(to left, rgba(81, 18, 129,1), rgb(121, 82, 179));
+    z-index:99;
+}
+#applicationName{
+    margin:0px;
+    padding:0px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.headerloginButton{
+    display: inline;
+}
+#loginBtn{
+    float:right;
+    border: 1px solid #ece8f0;
+    border-radius: 5px;
+    padding: 0px 17px;
+    background-color: transparent;
+    color:#f5f5f5;
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    outline:none;
+}
+#loginBtn:hover{
+    animation:buttonBackgroundEffect 0.5s alternate;
+}
+#linktologinForm{
+    text-align: center;
+}
+#getStartedBtn{
+    border: none;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, rgb(81, 18, 129), rgb(121, 82, 179));
+    padding: 5px 17px;
+    margin-top: 20px;
+    color: #f5f5f5;
+    cursor:pointer;
+    outline:none;
+    position:relative;
+    left:50%;
+    transform:translateX(-50%);
+}
+.homepageSecondSection{
+    margin:90px 0px;
+}
+.left{
+    float: right;
+}
+.right{
+    float: none;
+}
+.homepageImageContent{
+    text-align:left;
+    margin:0;
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+#footer{
+    border:none;
+    border-top-width:2px;
+    border-top-style:solid;
+    border-image:linear-gradient(to right top, rgb(81, 18, 129), rgba(81, 18, 129,0));
+    border-image-slice: 1;
+}
+#getStartedLinkFooter{
+    font-weight:500;
+    background-color:transparent;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#footerGetStarted{
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+#leftFooterLink{
+    font-weight:500;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+#copyrightBar{
+    color:#f5f5f5;
+    background-image: linear-gradient(to right, rgb(81, 18, 129), rgb(121, 82, 179));
+}
+#copyrightText{
+    margin:0px;
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+@media screen and (max-width:576px){
+    #headerContainer{
+        padding:15px 0px;
+    }
+    #applicationName{
+        margin-left: 0px;
+    }
+    #loginBtn{
+        font-size: 16px;
+        line-height: 32px;
+    }
+    #sectionContent{
+        margin-top:150px;
+    }
+    #sectionContentFirstText{
+        font-size:22px;
+        font-weight: 500;
+        text-align: center;
+    }
+    #sectionContentSecondText{
+        font-size:20px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .left{
+        float: none;
+    }
+    .right{
+        float: none;
+    }
+    .homepageImages{
+        position: relative;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+    }
+    .homepageImageContent{
+        font-size:16px;
+        text-align: center;
+    }
+    #getStartedLinkFooter{
+        font-size: 18px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #leftFooterLink{
+        font-size: 18px;
+        text-align: center;
+    }
+    #copyrightText{
+        font-size: 14px;
+        padding:10px 0px;
+    }
+}
+@media screen and (min-width:576px) and (max-width:768px){
+    #headerContainer{
+        padding:15px 0px;
+    }
+    #applicationName{
+        margin-left:10px;
+    }
+    #loginBtn{
+        font-size: 18px;
+        line-height: 36px;
+        margin-right: 10px;
+    }
+    #sectionContent{
+        margin-top:200px;
+    }
+    #sectionContentFirstText{
+        font-size:26px;
+        font-weight: 500;
+        text-align: center;
+    }
+    #sectionContentSecondText{
+        font-size:20px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .left{
+        float: none;
+    }
+    .right{
+        float: none;
+    }
+    .homepageImages{
+        position: relative;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+    }
+    .homepageImageContent{
+        font-size:20px;
+        text-align: center;
+    }
+    #getStartedLinkFooter{
+        font-size: 22px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #leftFooterLink{
+        font-size: 22px;
+        text-align: center;
+    }
+    #copyrightText{
+        font-size: 16px;
+        padding:5px 0px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1200px){
+    #headerContainer{
+        padding:15px 0px;
+    }
+    #applicationName{
+        margin-left:10px;
+    }
+    #loginBtn{
+        font-size: 18px;
+        line-height: 36px;
+        margin-right: 10px;
+    }
+    #sectionContent{
+        margin-top:300px;
+    }
+    #sectionContentFirstText{
+        font-size:26px;
+        font-weight: 500;
+        text-align: center;
+    }
+    #sectionContentSecondText{
+        font-size:20px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .left{
+        float: none;
+    }
+    .right{
+        float: none;
+    }
+    .homepageImages{
+        position: relative;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+    }
+    .homepageImageContent{
+        font-size:20px;
+        text-align: center;
+    }
+    #getStartedLinkFooter{
+        font-size: 22px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #leftFooterLink{
+        font-size: 22px;
+        text-align: center;
+    }
+    #copyrightText{
+        font-size: 16px;
+        padding:5px 0px;
+    }
+}
+@media screen and (min-width:1200px){
+    #headerContainer{
+        padding:15px 0px;
+    }
+    #applicationName{
+        margin-left:22px;
+    }
+    #loginBtn{
+        font-size: 20px;
+        line-height: 40px;
+        margin-right: 22px;
+    }
+    #sectionContent{
+        margin-top: 300px;
+    }
+    #sectionContentFirstText{
+        font-size:30px;
+        font-weight: 500;
+        text-align: center;
+    }
+    #sectionContentSecondText{
+        font-size:24px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .left{
+        float: none;
+    }
+    .right{
+        float: none;
+    }
+    .homepageImages{
+        position: relative;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+    }
+    .homepageImageContent{
+        font-size:24px;
+        text-align: center;
+    }
+    #getStartedLinkFooter{
+        font-size: 26px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #leftFooterLink{
+        font-size: 26px;
+        text-align: center;
+    }
+    #copyrightText{
+        font-size: 18px;
+        padding:5px 0px;
+    }
+}
+
+/* animations used */
+@keyframes buttonBackgroundEffect{
+    25%{
+     background-image:radial-gradient(circle, rgba(121, 82, 179, 0.4) 50%,transparent 50%);
+    }
+    50%{
+     background-image:radial-gradient(circle, rgba(121, 82, 179, 0.6) 75%,transparent 25%);
+    }
+    75%{
+     background-image:radial-gradient(circle, rgba(121, 82, 179, 0.7) 100%, transparent 0%);
+    }
+    100%{
+     background-image:radial-gradient(circle, rgba(121, 82, 179, 0.6) 0%,transparent 100%);
+    }
+}

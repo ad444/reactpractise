@@ -1,0 +1,548 @@
+html, body{
+    height:100%;
+    margin:0;
+    font-family: 'Rubik', sans-serif;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #555555;
+    opacity:0.5;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color:rgb(121, 82, 179);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color:rgb(81, 18, 129);
+}
+#mainContainer{
+    height:100%;
+    font-size: large;
+}
+#leftSideBar{
+    position:fixed;
+    width:30%;
+    height:100%;
+    background-color: #f6f6f6;
+    overflow-y:auto;
+}
+#leftSideBarContainer{
+    width: 100%;
+    margin:20px 0px;
+}
+#feedEnterBar{
+    display:block;
+    width:90%;
+    margin:auto;
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right top, rgb(81, 18, 129), rgba(81, 18, 129,0));
+    border-image-slice: 1;
+    border-radius:5px;
+    padding: 10px;
+}
+#feedCreateBtn{
+    border: none;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, rgb(81, 18, 129), rgb(121, 82, 179));
+    padding: 5px 17px;
+    margin-top: 20px;
+    color: #f5f5f5;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#rssdetailsLink {
+    font-weight: bold;
+    text-align: center;
+    margin-top:40px;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#centerContainer{
+    position:fixed;
+    width:60%;
+    height:100%;
+    left:30%;
+}
+#centerContainerContent{
+    height:100%;
+    overflow-y: auto;
+}
+#featuredSourcesHeader{
+    position:fixed;
+    width:60%;
+    background-color: rgb(121, 82, 179);
+    color:#f6f6f6;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    z-index:2;
+}
+#featuredSources{
+    margin:0;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 52px;
+    padding-left: 10px;
+}
+#featuredSourcesURL{
+    display:none;
+}
+#ifeaturedSourcesContainer{
+    position: relative;
+    top:78px;
+}
+#card{
+    margin: 20px auto;
+    background-image:linear-gradient(to bottom left, rgba(134,122,233,1), rgba(134,122,233,0));
+    border-radius: 3px;
+}
+#link{
+    margin-bottom:0px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#hr{
+    margin-top:0px;
+    border:none;
+    border-top-width:1px;
+    border-top-style:solid;
+    border-image:linear-gradient(to right, rgba(121, 82, 179, 1), rgba(121, 82, 179, 0));
+    border-image-slice:1;
+}
+#rightSideBar{
+    position:fixed;
+    right:0%;
+    width:10%;
+    height:100%;
+    background-color: #f6f6f6;
+    overflow-y:auto;
+}
+#rightSideBarContainer{
+    width:100%;
+    margin:110px 0px;
+    padding:0px;
+    text-align: center;
+}
+#moon{
+    width:50px;
+    height: auto;
+    margin:0px;
+    padding:0px;
+    margin-bottom:50px;
+    position: relative;
+    left: 40%;
+    transform: translateX(-40%);
+}
+#upper{
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    background-color:#111111;
+    position:absolute;
+    margin-top:10px;
+    margin-left:15px;
+    z-index:0;
+    transform: rotateZ(120deg);
+    cursor:pointer;
+}
+#lower{
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    background-color:#f6f6f6;
+    transform: rotateZ(120deg);
+    margin-left:10px;
+    cursor:pointer;
+}
+.rightSideBarLink{
+    /* margin-top:40px; */
+    margin-bottom:10px;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* special case for content heading */
+@media screen and (max-width : 406px) {
+    #applicationName{
+        font-size: 28px;
+        font-weight: 500;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    .navigationLinks{
+        margin-right:10px;
+    }
+    #mobileFeedBar{
+        float:right;
+        margin-top:15px;
+    }
+    #mobileEnterFeedBar{
+        position:absolute;
+        width: 0px;
+        opacity: 0;
+        z-index:-1;
+        height: 2px;
+        padding: 6px 2px;
+        border-left: 18px solid rgba(120, 25, 184, 1);
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent; 
+        background-color: #f6f6f6;
+        color: rgba(81, 18, 129,1);
+        font-size:14px;
+        font-weight:550;
+        outline: none;
+        transition:all 1s;
+    }
+    #mobileFeedBarButton{
+        height: 48px;
+        width: 60px;
+        background-color: rgba(81, 18, 129,1);
+        color: #f6f6f6;
+        font-size:16px;
+        font-weight: 550;
+        border: 1px solid #f6f6f6;
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+    }
+    #mobileLogOutLink{
+        clear:right;
+        float: right;
+        margin-top:15px;
+        font-weight:550;
+    }
+    #mobileMainContent{
+        position: fixed;
+        width: 100%;
+        background-color: #3737aa;
+        margin-top: 100px;
+        z-index: 98;
+    }
+    #contentHeading{
+        height:70px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        line-height:100px;
+        font-weight: 550;
+        color: #f6f6f6;
+        text-align:center;
+    }
+    .mobileSectionHeading{
+        margin-left: 10px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        font-weight: 550;
+        color:rgba(81, 18, 129,1);
+    }
+}
+/* For small devices */
+@media screen and (min-width:406px) and (max-width : 576px){
+    #applicationName{
+        font-size: 28px;
+        font-weight: 500;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    .navigationLinks{
+        margin-right:10px;
+    }
+    #mobileFeedBar{
+        float:right;
+        margin-top:15px;
+    }
+    #mobileEnterFeedBar{
+        position:absolute;
+        width: 0px;
+        opacity: 0;
+        z-index:-1;
+        height: 2px;
+        padding: 6px 2px;
+        border-left: 18px solid rgba(120, 25, 184, 1);
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent; 
+        background-color: #f6f6f6;
+        color: rgba(81, 18, 129,1);
+        font-size:14px;
+        font-weight:550;
+        outline: none;
+        transition:all 1s;
+    }
+    #mobileFeedBarButton{
+        height: 48px;
+        width: 60px;
+        background-color: rgba(81, 18, 129,1);
+        color: #f6f6f6;
+        font-size:16px;
+        font-weight: 550;
+        border: 1px solid #f6f6f6;
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+    }
+    #mobileLogOutLink{
+        clear:right;
+        float: right;
+        margin-top:15px;
+        font-weight:550;
+    }
+    #mobileMainContent{
+        position: fixed;
+        width: 100%;
+        background-color: #3737aa;
+        margin-top: 115px;
+        z-index: 98;
+    }
+    #contentHeading{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        line-height:40px;
+        font-weight: 550;
+        color: #f6f6f6;
+        text-align:center;
+    }
+    .mobileSectionHeading{
+        margin-left: 10px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        font-weight: 550;
+        color:rgba(81, 18, 129,1);
+    }
+}
+/* For medium and large devices */
+@media screen and (min-width : 577px) and (max-width: 992px){
+    #applicationName{
+        font-size:28px;
+        font-weight:500;
+        margin-left:10px;
+        margin-top:15px;
+    }
+    .navigationLinks{
+        margin-left: 10px;
+    }
+    #mobileFeedBar{
+        float:right;
+        margin-top:15px;
+        margin-right:10px;
+    }
+    #mobileEnterFeedBar{
+        width: 180px;
+        height: 2px;
+        padding: 6px 2px;
+        border: none;
+        border-left: 18px solid rgba(120, 25, 184, 1);
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        background-color: #f6f6f6;
+        color: rgba(81, 18, 129,1);
+        font-size:15px;
+        font-weight:550;
+        outline: none;
+    }
+    #mobileFeedBarButton{
+        height: 48px;
+        width: 60px;
+        background-color: rgba(81, 18, 129,1);
+        color: #f6f6f6;
+        font-size:16px;
+        font-weight: 550;
+        border: none;
+        border-top: 1px solid whitesmoke;
+        border-bottom: 1px solid whitesmoke;
+        border-right: 1px solid whitesmoke;
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+    }
+    #mobileLogOutLink{
+        clear:right;
+        float: right;
+        margin-top:15px;
+        margin-right:10px;
+        font-weight:550;
+    }
+    #mobileMainContent{
+        position: fixed;
+        width: 100%;
+        background-color: #3737aa;
+        margin-top: 115px;
+        z-index: 98;
+    }
+    #contentHeading{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        line-height:40px;
+        font-weight: 550;
+        color: #f6f6f6;
+        text-align:center;
+    }
+    .mobileSectionHeading{
+        margin-left: 10px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        font-weight: 550;
+        color: rgba(81, 18, 129,1);
+    }
+}
+@media screen and (max-width : 992px){
+    #mobileMainContainer{
+        display: block;
+        font-family: 'Hind Siliguri', sans-serif;
+    }
+    #mainContainer{
+        display: none;
+    }
+    #mobileHeader{
+        width: 100%;
+        position: fixed;
+        background-color: rgb(120 25 184);
+        color:#f6f6f6;
+        z-index: 99;
+    }
+    #Logo{
+        color:rgb(246, 246, 246);
+    }
+    #Logo:active{
+        color:rgb(246, 246, 246);
+        text-decoration: none;
+    }
+    #mobileDarkThemeBtn{
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        border: none;
+        border-radius: 50%;
+        padding: 10px 15px;
+        background-color: rgb(81, 18, 129);
+        color: #f6f6f6;
+        font-size: 18px;
+        outline:none;
+        z-index: 999;
+    }
+    .navigationLinks{
+        display: inline-block;
+        margin-bottom: 5px;
+        font-size:14px;
+        background: -webkit-linear-gradient(rgb(246, 245, 247), rgb(233, 233, 233));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.9;
+    }
+    .navigationLinks:hover{
+        opacity: 1;
+    }
+    #mobileLogOutLink{
+        background: -webkit-linear-gradient(rgb(246, 245, 247), rgb(233, 233, 233));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    #mobileMainContentContainer{
+        position:absolute;
+        height:100%;
+        overflow-y:auto;
+    }
+    #contentHeading{
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    #mobileFeaturedSourcesContainer{
+        margin-top: 225px;
+    }
+}
+@media screen and (min-width : 992px){
+    #mainContainer{
+        display: block;
+    }
+    #mobileMainContainer{
+        display: none;
+    }
+    #Logo{
+        color:rgb(81, 18, 129);
+    }
+    #Logo:active{
+        color:rgb(81, 18, 129);
+        text-decoration: none;
+    }
+}
+
+/* animation for mobileInputRSSBar */
+@keyframes inputBarAnimation {
+    25%{
+        width:56px;
+        opacity:0.33;
+        z-index:-1;
+        right:23px;
+    }
+    50%{
+        width:112px;
+        opacity:0.66;
+        right:46px;
+        z-index:-1;
+    }
+    75%{
+        width:176px;
+        opacity:0.99;
+        right:73px;
+        z-index:-1;
+    }
+    100%{
+        width:176px;
+        right:73px;
+        opacity:1;
+        z-index:1;
+    }
+}
+/* animation for mobileInputRSSBar */
+@keyframes inputBarAnimationReverse {
+    25%{
+        width:56px;
+        opacity:0.33;
+        z-index:-1;
+        right:23px;
+    }
+    50%{
+        width:112px;
+        opacity:0.66;
+        right:46px;
+        z-index:-1;
+    }
+    75%{
+        width:176px;
+        opacity:0.99;
+        right:73px;
+        z-index:-1;
+    }
+    100%{
+        width:176px;
+        right:73px;
+        opacity:1;
+        z-index:1;
+    }
+}
