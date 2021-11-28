@@ -1,0 +1,33 @@
+#linksContainer{
+    margin:110px 0px;
+}
+#navigatetohomedasboard{
+    font-weight: bold;
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#userFeedsSectionLink{
+    font-weight: bold;
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#newsChannelsSectors{
+    text-align: center;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgba(81, 18, 129, 1),rgba(121, 82, 179, 1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+    cursor:pointer
+}

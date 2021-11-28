@@ -70,6 +70,7 @@ html, body{
     -webkit-text-fill-color: transparent;
 }
 #centerContainer{
+    background-color: white;
     position:fixed;
     width:60%;
     height:100%;

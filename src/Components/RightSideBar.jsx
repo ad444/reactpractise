@@ -9,8 +9,8 @@ const RightSideBar = () => {
             <div id="rightSideBar">
                 <div id="rightSideBarContainer">
                     <div id="moon">
-                        <div id="upper" onclick={applicationTheme}></div>
-                        <div id="lower" onclick={applicationTheme}></div>
+                        <div id="upper" onClick={applicationTheme}></div>
+                        <div id="lower" onClick={applicationTheme}></div>
                     </div>
                     <p className="rightSideBarLink"><Link to="/"><b>Log Out</b></Link></p>
                     <p className="rightSideBarLink"><Link to="/contact"><b>Contact</b></Link></p>

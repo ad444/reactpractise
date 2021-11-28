@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.use(express.urlencoded());
 app.get('/', (req, res)=>{
     res.send("my name is aman dalal");
 })
@@ -16,7 +16,8 @@ app.get('/', (req, res)=>{
 //application routes
 app.use('/api/signup', require('./routes/signup'));
 app.use('/api/auth', require('./routes/login'));
-// app.use('/api/rsslinks', require('./routes/rsslinks'));
+app.use('/api/rssdata', require('./routes/rssjsondata'));
+app.use('/api/rsslinks', require('./routes/rsslinks'));
 // app.use('/api/contact', require('./routes/contact'));
 
 app.listen(8080, ()=>{

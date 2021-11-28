@@ -1,0 +1,36 @@
+#navigatetohome{
+    font-weight: bold;
+    text-align: center;
+    margin:110px 0px;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#feedTitle{
+    font-size:20px;
+    font-weight:550;
+    padding:15px 0px;
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.deleteFeeds{
+    border: none;
+    position:relative;
+    float: right;
+    background-color: transparent;
+    font-size: 22px;
+    color: #3737aa;
+    margin: 0px;
+    padding-right: 0;
+    z-index: 2;
+    cursor:pointer;
+}
+.deleteFeeds:focus{
+    outline: none;
+}
