@@ -95,6 +95,9 @@ html, body{
     font-weight: bold;
     line-height: 52px;
     padding-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #featuredSourcesURL{
     display:none;
@@ -107,6 +110,7 @@ html, body{
     margin: 20px auto;
     background-image:linear-gradient(to bottom left, rgba(134,122,233,1), rgba(134,122,233,0));
     border-radius: 3px;
+    cursor:pointer;
 }
 #link{
     margin-bottom:0px;
@@ -174,6 +178,37 @@ html, body{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor:pointer;
+}
+/* error message display box css */
+#errorMessageDisplayBox{
+    border:none;
+    border-radius:5px;
+    background: linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    width:300px;
+    height:400px;
+    color:#f6f6f6;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+}
+#errorMessageDisplayBoxCancel{
+    float: right;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#errorMessage{
+    clear: right;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 /* special case for content heading */
 @media screen and (max-width : 406px) {

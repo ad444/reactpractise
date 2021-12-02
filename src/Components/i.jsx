@@ -1,17 +1,18 @@
 import React from 'react'
 import '../CSS/i.css';
-import '../CSS/userdashboard.css';
 import { Link } from 'react-router-dom';
 import LeftSideBarLinkContainer from './LeftSideBarLinkContainer';
 import RightSideBar from './RightSideBar';
 import cardDetails from '../json/ihomedashboard';
 import ICard from './ICard';
+import ViewYourFeed from './ViewYourFeed';
 const I = (props) => {
     return (
         <>
             <div id="mainContainer">
                 <div id="leftSideBar">
-                    <p id="yourFeedsSectionLink"><Link to="/dashboard/yourfeeds">View your feeds</Link></p>
+                    <ViewYourFeed />
+                    <p id="yourFeedsSectionLink"><Link to="/dashboard">Home Dashboard</Link></p>
                     <LeftSideBarLinkContainer />
                 </div>
                 <div id="centerContainer">

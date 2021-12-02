@@ -3,10 +3,8 @@ import {useHistory} from 'react-router';
 import logo from '../images/DF.png'
 import '../CSS/login.css';
 import {Link} from 'react-router-dom';
+import ErrorDisplayBox from './ErrorDisplayBox';
 const LogIn = () => {
-
-    //useHistory hook available in react-router
-    let history = useHistory();
 
     const [data, setdata] = useState({
         email:"",
@@ -22,9 +20,70 @@ const LogIn = () => {
        })
     }
 
-    const loginDetail = async(e)=>{
-        e.preventDefault();
-        let response, error = false;
+    //error validation message
+    const [errorMessage, seterrorMessage] = useState({
+        emailMessage:'',
+        passwordMessage:''
+    })
+
+    //state for errorDisplay box
+    const [errorBoxDisplay, seterrorBoxDisplay] = useState(false);
+
+    //function to close errorDisplay box
+    const closeDisplayBox = ()=>{
+        seterrorBoxDisplay(false);
+    }
+
+    const Validator = (email, password)=>{
+        let emailerror, passworderror = false;
+
+        let pattEmail = /^\w+@[a-z.A-Z]+\.[a-zA-Z]{2,3}$/;
+        let pattPassword = /^[A-z]{6}[0-9]{4}\W{2}$/;
+        
+        if(!pattEmail.test(email) || email===''){
+           seterrorMessage((prev)=>{
+               return {
+                  ...prev,
+                  emailMessage:'Please enter valid email'
+               }
+           })       
+           emailerror = true;
+        }else{
+            seterrorMessage((prev)=>{
+                return {
+                   ...prev,
+                   emailMessage:''
+                }
+            })
+            emailerror = false;
+        }
+        
+        if(!pattPassword.test(password || password==='')){
+          seterrorMessage((prev)=>{
+               return {
+                  ...prev,
+                  passwordMessage:'Please enter correct password'
+               }
+           })
+           passworderror = true;
+        }else{
+            seterrorMessage((prev)=>{
+                return {
+                   ...prev,
+                   passwordMessage:''
+                }
+            })
+            passworderror = false;
+        }
+
+        if(emailerror === false && passworderror === false){
+            loginDetail();
+        }
+    }
+
+    const loginDetail = async()=>{
+        let response;
+        let error = false;
         try{
           const result = await fetch('http://localhost:8080/api/auth/login',{
               method:'POST',
@@ -33,15 +92,25 @@ const LogIn = () => {
               },
               body:JSON.stringify(data)
           })
-          response = await result.text();
+          response = await result.json();
+          console.log(response)
         }catch(e){
            error = true;
            console.log('there is an error',e);
         }
         if(!error){
-          localStorage.setItem('token', response);
-          history.push('/dashboard');
+          if(response.success === true){
+              localStorage.setItem('token', response.authToken);
+              window.location.href = 'http://localhost:3000/dashboard';
+          }else{
+              seterrorBoxDisplay(true);
+          }
         }
+    }
+
+    const userloginDetail = (e)=>{
+      e.preventDefault();
+      Validator(data.email, data.password);
     }
 
     return (
@@ -55,15 +124,20 @@ const LogIn = () => {
                 <div className="row" id="loginFormFieldSet">
                     <div className="col-12 col-sm-10 col-md-6 mx-auto" id="loginFormFieldSetContainer">
                         <p id="loginFormHeader">Login</p>
-                        <form id="loginform" onSubmit={loginDetail}>
+                        <form id="loginform" onSubmit={userloginDetail}>
                             <div className="form-group"><label htmlFor="email">Email address :</label><input className="form-control userDetails" onChange={setData} value={data.email} id="email" type="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email address" autocomplete="off" />
-                                <div className="validationMessage" id="userEmailValidationMessage">Enter valid email for ex: 'abc@gmail.com'</div>
+                                <div className="validationMessage" id="userEmailValidationMessage">{errorMessage.emailMessage}</div>
                             </div>
                             <div className="form-group"><label htmlFor="password">Password :</label><input className="form-control userDetails" onChange={setData} value={data.password} id="password" type="password" name="password" aria-describedby="passwordHelp" placeholder="Enter password here" />
-                                <div className="validationMessage" id="userEmailValidationMessage">Enter valid email for ex: 'abc@gmail.com'</div><small className="form-text" id="emailHelp">We&apos;ll never share your email with anyone else.</small>
+                                <div className="validationMessage" id="userPasswordValidationMessage">{errorMessage.passwordMessage}</div><small className="form-text" id="emailHelp">We&apos;ll never share your information with anyone else.</small>
                             </div>
                             <button id="loginFormSubmitBtn" type="submit">Log In</button>
                         </form>
+                        {/* Error display box */}
+                        {
+                            errorBoxDisplay === true &&
+                            <ErrorDisplayBox message={'Sorry! There is no user with these information.'} closeDisplayBox={closeDisplayBox} navigate={'signup'}/>
+                        }
                     </div>
                 </div>
             </div>

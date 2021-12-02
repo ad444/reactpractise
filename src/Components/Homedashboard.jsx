@@ -1,6 +1,5 @@
 import React from 'react'
 import '../CSS/homedashboard.css';
-import '../CSS/userdashboard.css';
 import { Link } from 'react-router-dom';
 import LeftSideBarLinkContainer from './LeftSideBarLinkContainer';
 import RightSideBar from './RightSideBar';
@@ -9,12 +8,13 @@ import educationCards from '../json/educationSectionContainer';
 import websiteCards from '../json/websiteContainer';
 import HomedashboardNewsCard from './HomeDashboardNewsCard';
 import HomedashboardCard from './HomedashboardCard';
+
 const Homedashboard = () => {
     return (
         <>
             <div id="mainContainer">
                 <div id="leftSideBar">
-                    <p id="yourFeedsSectionLink"><Link to="/dashboard/yourfeeds">View your feeds</Link></p>
+                    <p id="yourFeedsSectionLinkHomeDashboard"><Link to='/dashboard/yourfeeds'>View your feeds</Link></p>
                     <LeftSideBarLinkContainer />
                 </div>
                 <div id="centerContainer">

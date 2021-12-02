@@ -8,8 +8,13 @@ router.post('/', (req, res)=>{
     console.log(req.body);
     let data;
     (async () => {
-        data = await parser.parseURL(req.body.url);
-        res.json(data);
+        try{
+            data = await parser.parseURL(req.body.url);
+            res.json(data);
+        }catch(err){
+            res.json({err:err});
+        }
+        
     })();
 })
 module.exports = router;

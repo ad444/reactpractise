@@ -7,9 +7,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+#rssurl{
+    display:none;
+}
 #feedTitle{
     font-size:20px;
-    font-weight:550;
+    font-weight:500;
     padding:15px 0px;
     position:relative;
     top:50%;
@@ -28,7 +31,7 @@
     color: #3737aa;
     margin: 0px;
     padding-right: 0;
-    z-index: 2;
+    z-index: 1;
     cursor:pointer;
 }
 .deleteFeeds:focus{

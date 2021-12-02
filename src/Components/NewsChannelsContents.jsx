@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from 'react'
 import '../CSS/newschannelscontent.css';
-import '../CSS/userdashboard.css';
 import { Link } from 'react-router-dom';
 import LeftSideBarLinkContainer from './LeftSideBarLinkContainer';
 import RightSideBar from './RightSideBar';
@@ -8,6 +7,7 @@ import NewsChannelsContentCard from './NewsChannelsContentCard';
 import Call from '../json/newsChannelsContentFeeds';
 import RSSContext
  from '../rssContext/RSSContext';
+ import ViewYourFeed from './ViewYourFeed';
 const NewsChannelsContent = (props) => {
     let context = useContext(RSSContext);
 
@@ -64,7 +64,8 @@ const NewsChannelsContent = (props) => {
         <>
             <div id="mainContainer">
                 <div id="leftSideBar">
-                    <p id="yourFeedsSectionLink"><Link to="/dashboard/yourfeeds">View your feeds</Link></p>
+                    <ViewYourFeed />
+                    <p id="yourFeedsSectionLink"><Link to="/dashboard">Home Dashboard</Link></p>
                     <LeftSideBarLinkContainer />
                 </div>
                 <div id="centerContainer">

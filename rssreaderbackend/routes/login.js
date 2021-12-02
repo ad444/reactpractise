@@ -9,21 +9,27 @@ const jwtSignature = "amandalal";
 
 //end point to login user
 router.post('/login', async (req, res)=>{
-   console.log(req.body);
    const user = await User.findOne({email:req.body.email}).exec();
-   const validPassword = await bcrypt.compare(req.body.password, user.password);
+   let error = false;
 
-   if(!user){
-      res.status(404).send("Please enter correct details");
-   } else if(!validPassword){
-      res.status(404).send("Please enter correct password");
+   if(user){
+      const validPassword = await bcrypt.compare(req.body.password, user.password);
+      if(validPassword){
+         error = true;
+      }
+   }
+
+   let success = false;
+   if(!error){
+      res.json({success:success});
    }
    else{ 
+      success = true;
       const data = {
          id:user.id
        }
       const authToken = jwt.sign(data, jwtSignature);
-      res.send(authToken);
+      res.json({success:success, authToken:authToken});
    }
 })
 

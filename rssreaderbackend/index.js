@@ -18,7 +18,7 @@ app.use('/api/signup', require('./routes/signup'));
 app.use('/api/auth', require('./routes/login'));
 app.use('/api/rssdata', require('./routes/rssjsondata'));
 app.use('/api/rsslinks', require('./routes/rsslinks'));
-// app.use('/api/contact', require('./routes/contact'));
+app.use('/api/contact', require('./routes/contact'));
 
 app.listen(8080, ()=>{
     console.log(`Application is listening at : localhost:8080`);

@@ -99,6 +99,7 @@ html, body{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    top: 50%;
 }
 #footerGetStarted{
     position: relative;
@@ -337,7 +338,7 @@ html, body{
         font-size: 26px;
         position: relative;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
     }
     #leftFooterLink{
         font-size: 26px;

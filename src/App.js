@@ -11,6 +11,9 @@ import newsChannelsContent from './json/newsChannelsContent';
 import NewsChannelsContent from './Components/NewsChannelsContents';
 import RSSDetails from './Components/RSSDetails';
 import UserFeeds from './Components/UserFeeds';
+import UserFeedDisplay from './Components/UserFeedDisplay';
+import Contact from './Components/Contact';
+import './CSS/userdashboard.css';
 const App = () => {
     return (
         <>
@@ -18,7 +21,7 @@ const App = () => {
           <Router>
               <Switch>
                   <Route exact path='/'>
-                      <Index />
+                    <Index />
                   </Route>
                   <Route exact path='/login'>
                       <LogIn />
@@ -26,10 +29,14 @@ const App = () => {
                   <Route exact path='/signup'>
                       <SignUp />
                   </Route>
-                  <Route exact path='/dashboard'>
-                      <Homedashboard />
-                  </Route>
                   {
+                    localStorage.getItem('token')!== null&&
+                    <Route exact path='/dashboard'>
+                        <Homedashboard />
+                    </Route>
+                  }
+                  {
+                      localStorage.getItem('token')!== ''&&
                       newsCards.map((elem, index)=>{
                            return <Route exact path={elem.url}>
                                <I key={index} header={elem.header} url={elem.url}/>
@@ -37,6 +44,7 @@ const App = () => {
                       })
                   }
                   {
+                      localStorage.getItem('token')!== ''&&
                       newsChannelsContent.map((elem, index)=>{
                          return <Route exact path={`/dashboard/${elem.channelURL}/${elem.channelTopStories}`}>
                                <NewsChannelsContent key={index} channelName={elem.channelName} pageHeader={elem.pageHeaderTopStories}/>
@@ -44,6 +52,7 @@ const App = () => {
                       })
                   }
                   {
+                      localStorage.getItem('token')!== ''&&
                       newsChannelsContent.map((elem, index)=>{
                          return <Route exact path={`/dashboard/${elem.channelURL}/${elem.channelBusiness}`}>
                                <NewsChannelsContent key={index} channelName={elem.channelName} pageHeader={elem.pageHeaderBusiness}/>
@@ -51,6 +60,7 @@ const App = () => {
                       })
                   }
                   {
+                      localStorage.getItem('token')!== ''&&
                       newsChannelsContent.map((elem, index)=>{
                          return <Route exact path={`/dashboard/${elem.channelURL}/${elem.channelHealth}`}>
                                <NewsChannelsContent key={index} channelName={elem.channelName} pageHeader={elem.pageHeaderHealth}/>
@@ -58,6 +68,7 @@ const App = () => {
                       })
                   }
                   {
+                      localStorage.getItem('token')!== ''&&
                       newsChannelsContent.map((elem, index)=>{
                          return <Route exact path={`/dashboard/${elem.channelURL}/${elem.channelWorld}`}>
                                <NewsChannelsContent key={index} channelName={elem.channelName} pageHeader={elem.pageHeaderWorld}/>
@@ -65,6 +76,7 @@ const App = () => {
                       })
                   }
                   {
+                      localStorage.getItem('token')!== ''&&
                       newsChannelsContent.map((elem, index)=>{
                          return <Route exact path={`/dashboard/${elem.channelURL}/${elem.channelTechnology}`}>
                                <NewsChannelsContent key={index} channelName={elem.channelName} pageHeader={elem.pageHeaderTechnology}/>
@@ -72,18 +84,34 @@ const App = () => {
                       })
                   }
                   {
+                      localStorage.getItem('token')!== ''&&
                       newsChannelsContent.map((elem, index)=>{
                          return <Route exact path={`/dashboard/${elem.channelURL}/${elem.channelSports}`}>
                                <NewsChannelsContent key={index} channelName={elem.channelName} pageHeader={elem.pageHeaderSports}/>
                          </Route>
                       })
                   }
-                  <Route exact path='/dashboard/rssdetails'>
-                      <RSSDetails />
-                  </Route>
-                  <Route exact path='/dashboard/yourfeeds'>
-                        <UserFeeds />
-                  </Route>
+                  {
+                    localStorage.getItem('token')!== ''&&
+                    <Route exact path='/dashboard/rssdetails'>
+                        <RSSDetails />
+                    </Route>
+                  }
+                  {
+                    localStorage.getItem('token')!== ''&&
+                    <Route exact path='/dashboard/yourfeeds'>
+                            <UserFeeds />
+                    </Route>
+                  }
+                  {
+                    localStorage.getItem('token')!== ''&&
+                    <Route exact path='/dashboard/yourfeeds/rss'>
+                        <UserFeedDisplay />
+                    </Route>
+                  } 
+                    <Route exact path='/contact'>
+                        <Contact />
+                    </Route>
             </Switch>
           </Router>
           </RSSState>

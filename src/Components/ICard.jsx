@@ -11,10 +11,10 @@ const ICard = (props) => {
     }
 
     return (
-        <div id="card" className="col-5">
-            <p id="newsChannelsSectors" onClick={()=>{
-                rssLink(props.url)
-            }}>{props.cardContent}</p>
+        <div id="card" className="col-5" onClick={()=>{
+            rssLink(props.url)
+        }}>
+            <p id="newsChannelsSectors" >{props.cardContent}</p>
         </div>
     )
 }

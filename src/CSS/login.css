@@ -55,11 +55,7 @@ html, body{
     -webkit-text-fill-color: transparent;
 }
 .validationMessage{
-    display: none;
     width: 100%;
-    border: 1px solid;
-    border-bottom-left-radius: .25rem;
-    border-bottom-right-radius: .25rem;
     border-top: none;
     padding: .375rem .75rem;
     font-size: 1rem;

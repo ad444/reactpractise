@@ -1,7 +1,38 @@
+#yourFeedsSectionLinkHomeDashboard{
+    font-weight: bold;
+    text-align: center;
+    margin-top:110px;
+    margin-bottom:50px;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#yourFeedsSectionLink3{
+    font-weight: bold;
+    text-align: center;
+    margin-top:110px;
+    margin-bottom:50px;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 #yourFeedsSectionLink{
     font-weight: bold;
     text-align: center;
-    margin:110px 0px;
+    margin-top:10px;
+    margin-bottom:50px;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#yourFeedsSectionLink2{
+    margin-top:110px;
+    margin-bottom:10px;
+    font-weight: bold;
+    text-align: center;
     background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
     background-clip: text;
     -webkit-background-clip: text;

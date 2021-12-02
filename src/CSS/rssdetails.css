@@ -1,8 +1,8 @@
 #yourFeedsSectionLink{
     font-weight: bold;
     text-align: center;
-    /* margin:110px 0px; */
-    margin-top:110px;
+    margin-top:10px;
+    margin-bottom:50px;
     background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
     background-clip: text;
     -webkit-background-clip: text;

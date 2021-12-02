@@ -1,0 +1,22 @@
+#linksContainer{
+    margin:110px 0px;
+}
+#navigatetohomedasboard{
+    font-weight: bold;
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#userFeedsSectionLink{
+    font-weight: bold;
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(81,18,129), rgb(121, 82, 179));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#title{
+    margin-bottom:0px;
+}

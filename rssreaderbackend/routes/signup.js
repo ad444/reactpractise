@@ -8,26 +8,22 @@ const jwtSignature = "amandalal";
 
 router.post('/', async (req, res)=>{
     const user = new User(req.body);
-    //checking if the user with this email exists
-    check = false;
+    //checker for the user
+    check = true;
+
     const sameUserEmail = await User.findOne({email:req.body.email}).exec();
-    if(sameUserEmail === null){
+    if(sameUserEmail !== null){
       check = false;
-    }else{
-      check = true;
-      console.log('User with this email already exists');
     }
     //checking if the user with this number exists
-    const sameUserNumber = await User.findOne({mobile_number:req.body.mobile_number}).exec();
-    if(sameUserNumber === null){
-       check = false;
-    }else{
-       check = true;
-       console.log('User with this number already exists');
-    }
+    // const sameUserNumber = await User.findOne({mobile_number:req.body.mobile_number}).exec();
+    // if(sameUserNumber === null){
+    //   check = true;
+    // }
+
     //check whether to submit user data or not
-    if(check){
-      res.send("Enter valid data")
+    if(!check){
+      res.json({success:check})
     }else{
       const saltRounds = 10;
       bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -35,12 +31,11 @@ router.post('/', async (req, res)=>{
             // Store hash in your password DB.
             user.password = hash;
             user.save().then(()=>{
-              console.log('Sign up successfully completed!');
               const data = {
                 id:user.id
               }
               const authToken = jwt.sign(data, jwtSignature);
-              res.send(authToken);
+              res.json({success:check, authToken:authToken});
             })
         });
       });
